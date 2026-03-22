@@ -12,7 +12,7 @@ let multiply = function (a, b) {
 
 let divide = function (a, b) {
     if (b == 0) {
-        return "Error! Cannot divide by zero."
+        return alert("Cannot divide by zero !");
     }
     return a / b;
 }
@@ -39,6 +39,7 @@ let operate = function (a, operator, b) {
 }
 
 let num1 = null, num2 = null, operator = null;
+let equal = false;
 
 let display = document.querySelector("input");
 let btn = document.querySelectorAll("button");
@@ -49,6 +50,14 @@ btn.forEach(function (btn) {
         let value = btn.value;
 
         if (btn.classList.contains("number")) {
+            
+            if (equal){
+                num1 = null;
+                num2 = null;
+                operator = null;
+                display.value = "";
+                equal = false;
+            }
 
             if (operator === null) {
                 if (num1 === null) {
@@ -72,6 +81,10 @@ btn.forEach(function (btn) {
         }
 
         else if (btn.classList.contains("operator")) {
+
+            if (equal){
+                equal = false;
+            }
 
             if (operator === null) {
                 if (num2 === null) {
@@ -105,7 +118,10 @@ btn.forEach(function (btn) {
         }
 
         else if (value === "=") {
-            display.value = operate(Number(num1), operator, Number(num2));
+            if ((num1 !== null) && (num2 !== null) && (operator !== null)){
+                display.value = operate(Number(num1), operator, Number(num2));
+                equal = true;
+            }
         }
 
         else if (value === "clear") {
