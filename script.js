@@ -130,5 +130,30 @@ btn.forEach(function (btn) {
             num2 = null;
             operator = null;
         }
+
+        else if (value === "."){
+            if (operator === null){
+                if (num1 === null){
+                    num1 = "0.";
+                    display.value += num1;
+                }
+                else if (!num1.includes(".")){
+                    num1 += value;
+                    display.value += value;
+                }
+            }
+
+            
+            else{
+                if (num2 === null){
+                    num2 = "0.";
+                    display.value += num2;
+                }
+                else if (!num2.includes(".")){
+                    num2 += value;
+                    display.value += value;
+                }
+            }
+        }
     })
 })
