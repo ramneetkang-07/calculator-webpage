@@ -18,43 +18,43 @@
             <input type="text" id="display" disabled>
         </div>
 
-        <div id="buttons">
+        <div class="buttons">
             <div class="erase">
-                <button>AC</button>
-                <button>CLEAR</button>
+                <button value="delete">AC</button>
+                <button value="clear">CLEAR</button>
             </div>
 
-            <div class="numbers">
+            <div class="numbers-and-operators">
                 <div class="seven-to-nine">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
+                    <button value="7" class="number">7</button>
+                    <button value="8" class="number">8</button>
+                    <button value="9" class="number">9</button>
                 </div>
 
                 <div class="four-to-six">
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
+                    <button value="4" class="number">4</button>
+                    <button value="5" class="number">5</button>
+                    <button value="6" class="number">6</button>
                 </div>
 
                 <div class="one-to-three">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
+                    <button value="1" class="number">1</button>
+                    <button value="2" class="number">2</button>
+                    <button value="3" class="number">3</button>
                 </div>
 
                 <div class="symbols">
-                    <button id="decimal">.</button>
-                    <button>0</button>
-                    <button id="equal-to">=</button>
+                    <button id="decimal" value=".">.</button>
+                    <button value="0" class="number">0</button>
+                    <button id="equal-to" value="=">=</button>
                 </div>
             </div>
 
             <div class="operators">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
+                <button class="operator" value="+">+</button>
+                <button class="operator" value="-">-</button>
+                <button class="operator" value="*">*</button>
+                <button class="operator" value="/">/</button>
             </div>
 
         </div>
