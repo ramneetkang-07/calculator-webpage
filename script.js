@@ -68,12 +68,40 @@ btn.forEach(function (btn) {
                 }
             }
 
-            display.value  += value;
+            display.value += value;
         }
 
         else if (btn.classList.contains("operator")) {
-            operator = value;
-            display.value += operator;
+
+            if (operator === null) {
+                if (num2 === null) {
+                    operator = value;
+                    display.value += operator;
+                }
+
+                else {
+                    num1 = operate(Number(num1), operator, Number(num2));
+                    display.value = num1;
+                    num2 = null;
+                    operator = value;
+                    display.value += operator;
+                }
+            }
+
+            else {
+                if (num2 === null) {
+                    operator = value;
+                    display.value = display.value.slice(0, display.value.length - 1).concat(operator);
+                }
+
+                else {
+                    num1 = operate(Number(num1), operator, Number(num2));
+                    display.value = num1;
+                    num2 = null;
+                    operator = value;
+                    display.value += operator;
+                }
+            }
         }
 
         else if (value === "=") {
