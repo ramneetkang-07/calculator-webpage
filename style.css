@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    padding: 20px;
+    color: #36454F;
+    font-size: 24px;
+}
+
+main {
+    border: 3px solid #36454F;
+    background-color: #CAD4DB;
+    border-radius: 16px;
+    width: 85%;
+    max-width: 450px;
+    aspect-ratio: 3/4;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    overflow: auto;
+}
+
+.display {
+    background-color: white;
+    border: 3px solid #36454F;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 32px;
+    padding: 20px;
+    text-align: right;
+    flex: 1;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 5;
+}
+
+button {
+    cursor: pointer;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.erase {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    flex: 1;
+}
+
+#delete, #clear {
+    flex: 1;
+    border: 2px solid #36454F;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#delete {
+    background-color: #E06666;
+}
+
+#clear {
+    background-color: #93C47D;
+}
+
+.numbers-and-operators {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    flex: 4;
+}
+
+#row1, #row2, #row3, #row4 {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+.numbers, .operators, #decimal, #equal-to {
+    flex: 1;
+    border: 2px solid #36454F;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.numbers {
+    background-color: #FFFFFF;
+    color: #36454F;
+    font-size: 20px;
+}
+
+.operators {
+    background-color: #36454F;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+#decimal {
+    background-color: #F8F9FA;
+    color: #36454F;
+    font-size: 20px;
+}
+
+#equal-to {
+    background-color: #5B7B91;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.numbers:hover {
+  background-color: #F0F0F0;
+}
+
+.operators:hover {
+  background-color: #4A5A65;
+}
+
+#decimal:hover {
+  background-color: #E9ECEF;
+}
+
+#equal-to:hover {
+  background-color: #6C8CA3;
+}
+
+#delete:hover {
+  background-color: #E57373;
+}
+
+#clear:hover {
+  background-color: #A3D18D;
+}
+
+footer {
+    background-color: #36454F;
+    padding: 18px;
+    font-size: 18px;
+    color: aliceblue;
+    margin-top: 30px;
+}
