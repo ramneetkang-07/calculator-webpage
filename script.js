@@ -55,7 +55,7 @@ btn.forEach(function (btn) {
 
         let value = btn.value;
 
-        if (btn.classList.contains("number")) {
+        if (btn.classList.contains("numbers")) {
             
             if (equal){
                 num1 = null;
@@ -86,7 +86,7 @@ btn.forEach(function (btn) {
             display.value += value;
         }
 
-        else if (btn.classList.contains("operator")) {
+        else if (btn.classList.contains("operators")) {
 
             if (equal){
                 equal = false;
@@ -160,6 +160,22 @@ btn.forEach(function (btn) {
                     display.value += value;
                 }
             }
+        }
+
+        else if (value === "delete"){
+            if (operator === null){
+                num1 = num1.slice(0, num1.length - 1);
+            }
+
+            else if (num2 === null){
+                operator = null;
+            }
+
+            else{
+                num2 = num2.slice(0, num2.length - 1);
+            }
+
+            display.value = display.value.slice(0, display.value.length - 1);
         }
     })
 })
