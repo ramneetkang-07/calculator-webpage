@@ -12,7 +12,8 @@ let multiply = function (a, b) {
 
 let divide = function (a, b) {
     if (b == 0) {
-        return alert("Cannot divide by zero !");
+        alert("Cannot divide by zero !");
+        return null;
     }
     return a / b;
 }
@@ -35,7 +36,12 @@ let operate = function (a, operator, b) {
             break;
     }
 
-    return result;
+    if (result === null) {
+        return null;
+    }
+    else{
+        return Number(result.toFixed(4));
+    }
 }
 
 let num1 = null, num2 = null, operator = null;
