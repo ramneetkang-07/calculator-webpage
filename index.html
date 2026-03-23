@@ -15,48 +15,44 @@
 
     <main>
         <div>
-            <input type="text" id="display" disabled>
+            <input type="text" class="display" readonly>
         </div>
 
         <div class="buttons">
             <div class="erase">
-                <button value="delete">DELETE</button>
-                <button value="clear">CLEAR</button>
+                <button id="delete", value="delete">DELETE</button>
+                <button id="clear", value="clear">CLEAR</button>
             </div>
 
             <div class="numbers-and-operators">
-                <div class="seven-to-nine">
-                    <button value="7" class="number">7</button>
-                    <button value="8" class="number">8</button>
-                    <button value="9" class="number">9</button>
+                <div id="row1">
+                    <button value="7" class="numbers">7</button>
+                    <button value="8" class="numbers">8</button>
+                    <button value="9" class="numbers">9</button>
+                    <button class="operators" value="/">÷</button>
                 </div>
 
-                <div class="four-to-six">
-                    <button value="4" class="number">4</button>
-                    <button value="5" class="number">5</button>
-                    <button value="6" class="number">6</button>
+                <div id="row2">
+                    <button value="4" class="numbers">4</button>
+                    <button value="5" class="numbers">5</button>
+                    <button value="6" class="numbers">6</button>
+                    <button class="operators" value="*">x</button>
                 </div>
 
-                <div class="one-to-three">
-                    <button value="1" class="number">1</button>
-                    <button value="2" class="number">2</button>
-                    <button value="3" class="number">3</button>
+                <div id="row3">
+                    <button value="1" class="numbers">1</button>
+                    <button value="2" class="numbers">2</button>
+                    <button value="3" class="numbers">3</button>
+                    <button class="operators" value="-">-</button>
                 </div>
 
-                <div class="symbols">
+                <div id="row4">
                     <button id="decimal" value=".">.</button>
-                    <button value="0" class="number">0</button>
+                    <button value="0" class="numbers">0</button>
                     <button id="equal-to" value="=">=</button>
+                    <button class="operators" value="+">+</button>
                 </div>
             </div>
-
-            <div class="operators">
-                <button class="operator" value="+">+</button>
-                <button class="operator" value="-">-</button>
-                <button class="operator" value="*">X</button>
-                <button class="operator" value="/">÷</button>
-            </div>
-
         </div>
     </main>
 
