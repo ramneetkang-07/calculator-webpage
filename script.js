@@ -179,3 +179,132 @@ btn.forEach(function (btn) {
         }
     })
 })
+
+document.addEventListener("keydown", function(event){
+    const value = event.key;
+    const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    const operators = ["+", "-", "*", "/"];
+
+    if (numbers.includes(value)) {
+        
+            if (equal){
+                num1 = null;
+                num2 = null;
+                operator = null;
+                display.value = "";
+                equal = false;
+            }
+
+            if (operator === null) {
+                if (num1 === null) {
+                    num1 = value;
+                }
+                else {
+                    num1 += value;
+                }
+            }
+
+            else {
+                if (num2 === null) {
+                    num2 = value;
+                }
+                else {
+                    num2 += value;
+                }
+            }
+
+            display.value += value;
+        }
+
+        else if (operators.includes(value)) {
+
+            if (equal){
+                equal = false;
+            }
+
+            if (operator === null) {
+                if (num2 === null) {
+                    operator = value;
+                    display.value += operator;
+                }
+
+                else {
+                    num1 = operate(Number(num1), operator, Number(num2));
+                    display.value = num1;
+                    num2 = null;
+                    operator = value;
+                    display.value += operator;
+                }
+            }
+
+            else {
+                if (num2 === null) {
+                    operator = value;
+                    display.value = display.value.slice(0, display.value.length - 1).concat(operator);
+                }
+
+                else {
+                    num1 = operate(Number(num1), operator, Number(num2));
+                    display.value = num1;
+                    num2 = null;
+                    operator = value;
+                    display.value += operator;
+                }
+            }
+        }
+
+        else if ((value === "=") || (value === "Enter")){
+            if ((num1 !== null) && (num2 !== null) && (operator !== null)){
+                display.value = operate(Number(num1), operator, Number(num2));
+                equal = true;
+            }
+        }
+
+       else if ((value === "C") || (value === "c")) {
+            display.value = "";
+            num1 = null;
+            num2 = null;
+            operator = null;
+        }
+
+        else if (value === "."){
+            if (operator === null){
+                if (num1 === null){
+                    num1 = "0.";
+                    display.value += num1;
+                }
+                else if (!num1.includes(".")){
+                    num1 += value;
+                    display.value += value;
+                }
+            }
+
+            
+            else{
+                if (num2 === null){
+                    num2 = "0.";
+                    display.value += num2;
+                }
+                else if (!num2.includes(".")){
+                    num2 += value;
+                    display.value += value;
+                }
+            }
+        }
+
+        else if (value === "Backspace"){
+            if (operator === null){
+                num1 = num1.slice(0, num1.length - 1);
+            }
+
+            else if (num2 === null){
+                operator = null;
+            }
+
+            else{
+                num2 = num2.slice(0, num2.length - 1);
+            }
+
+            display.value = display.value.slice(0, display.value.length - 1);
+        } 
+})
